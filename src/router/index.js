@@ -12,15 +12,29 @@ const router = createRouter({
     {
       path: '/party',
       name: 'party',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/PartyView.vue')
+      component: () => import('../views/PartyView.vue'),
     },
     {
-      path: '/monsters',
-      name: 'monsters',
-      component: () => import('../views/MonstersView.vue')
+      path: '/foes',
+      name: 'foes',
+      component: () => import('../views/FoesView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'dashboard',
+          component: () => import('../views/foes/FoesDashboard.vue'),
+        },
+        {
+          path: 'create',
+          name: 'create',
+          component: () => import('../views/foes/FoesCreate.vue'),
+        },
+        {
+          path: 'edit/:id',
+          name: 'edit',
+          component: () => import('../views/foes/FoesEdit.vue'),
+        }
+      ]
     },
   ]
 })

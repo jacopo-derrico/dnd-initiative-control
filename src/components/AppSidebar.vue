@@ -5,7 +5,7 @@
         <nav class="d-flex flex-column gap-4">
             <RouterLink to="/">Encounters</RouterLink>
             <RouterLink to="/party">Party</RouterLink>
-            <RouterLink to="/monsters">Monsters</RouterLink>
+            <RouterLink to="/foes">Foes</RouterLink>
         </nav>
 
     </aside>

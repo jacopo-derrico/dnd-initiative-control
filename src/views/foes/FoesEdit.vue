@@ -1,6 +1,6 @@
 <template>
-    <div class="monsters">
-        <h1>Your Monsters</h1>
+    <div>
+        Foes Edit
     </div>
 </template>
 
