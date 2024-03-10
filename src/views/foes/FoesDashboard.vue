@@ -6,17 +6,22 @@
                 <RouterLink to="/foes/create"><i class="fa-solid fa-plus"></i> Create new foe</RouterLink>
             </div>
         </div>
-        <div class="card">
-            <RouterLink to="/foes/edit">
+        <div 
+        v-for="element in store.arrayFoes"
+        :key="element.id"
+        class="card"
+        @click="editMode(element)"
+        >
+            <RouterLink :to="`/foes/edit/${element.id}`">
                 <div class="card-body p-0">       
                     <figure class="m-0">
                         <img src="https://picsum.photos/300/200" alt="">
                     </figure>
                     <div class="card-info p-4">
-                        <h5>Name</h5>
+                        <h5>{{ element.name }}</h5>
                         <div class="card-details d-flex gap-3">
-                            <span>HP: 230</span>
-                            <span>AC: 19</span>
+                            <span>HP: {{ element.hp}}</span>
+                            <span>AC: {{ element.ac }}</span>
                         </div>
                     </div>
                 </div>
@@ -27,6 +32,24 @@
 </template>
 
 <script>
+import router from '@/router';
+import { store } from '../../store'
+
+export default {
+    data() {
+        return {
+            store,
+        }
+    },
+    methods: {
+
+        editMode(element) {
+            store.editId = element.id
+            console.log(store.editId)
+            
+        }
+    }
+}
 
 </script>
 

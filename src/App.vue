@@ -1,11 +1,17 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 import AppSidebar from './components/AppSidebar.vue'
+import { store } from './store'
 
 export default {
   components: {
     AppSidebar
   },
+  data() {
+    return {
+      store
+    }
+  }
 }
 </script>
 
