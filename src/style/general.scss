@@ -1,3 +1,7 @@
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
 @import "bootstrap/scss/bootstrap";
+
+#app {
+    display: flex;
+}

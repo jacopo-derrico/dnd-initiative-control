@@ -1,4 +1,4 @@
-import './assets/main.css'
+// import './assets/main.css'
 import * as bootstrap from 'bootstrap'
 import './style/general.scss'
 
